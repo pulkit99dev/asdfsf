@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <form class="form-horizontal" role="form">
+    <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <!-- <md-input-container class="col-xs-8 "> 
+        <div class="form-group">
+          <label id="labellers" for="PRno">PR No.</label>
+          <input type="text" class="form-control" id="PRno" placeholder="Enter PR No">
+        </div>
+        </md-input-container> -->
+
+        <md-input-container class="col-xs-8 "> 
+          <div class="form-group">
+          <label>{{caseNumber_label}}</label>
+          
+          <input class="form-control" name="caseNo" ng-model="caseNo"
+            ng-pattern="/^[a-zA-Z0-9_\/@# ]*$/" ng-maxlength=caseNumberMaxlen>
+          </div>
+          <div ng-messages="search.caseNo.$error" role="alert" multiple=""
+            ng-if="search.caseNo.$touched">
+            <div ng-message="pattern">Invalid {{caseNumber_label}} to
+              search. Only alphabets, numbers, space, /, @, #, _ are allowed.</div>
+            <div ng-message="pattern maxlength">Max 10 characters can
+              be filled.</div>
+          </div>
+          </md-input-container>
+          <md-checkbox class="md-primary " style="margin-top: 5%"
+            ng-model="isExactSearch" aria-label="Exact Search">
+          Exact Search </md-checkbox>
+
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <!-- <md-input-container class="col md-block"> 
+        <div class="form-group">
+          <label id="labellers" for="PatientName">Patient Name</label>
+          <input type="text" class="form-control" id="PatientName" placeholder="Enter Patient's Name">
+        </div>
+        </md-input-container> -->
+
+        <md-input-container class="md-block"> 
+          <div class="form-group">
+          <label for="namePatient">Patient Name</label> 
+          <input type="text" class="form-control" id="namePatient" name="patientName" ng-model="patientName"
+            ng-pattern="/^[a-zA-Z ]*$/" />
+            </div>
+          <div ng-messages="search.patientName.$error" role="alert"
+            ng-if="search.patientName.$touched" multiple="">
+            <div ng-message="pattern">Only alphabets are allowed.</div>
+          </div>
+          </md-input-container>
+        </div>
+
+    </div>
+  </form>
+
+        <div class="form-group">
+            <label id="labellers" for="exampleInputEmail1">Email Id</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Patient's Email Id">
+          </div>
+          <div class="form-group">
+            <label id="labellers" for="phoneNumber">Phone Number</label>
+            <input type="number" class="form-control" id="phoneNumber" placeholder="Enter Phone number">
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Advance Search</label>
+          </div>
+        
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+      
+</md-input-container>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
